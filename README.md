@@ -1,0 +1,1 @@
+This project is to generate rpm for Pentaho binary to deploy via Puppet.
