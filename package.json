@@ -1,6 +1,9 @@
 {
   "name": "cudl-data-feed",
   "version": "0.1.0",
+  "pentahoName": "Kettle-data-integration",
+  "pentahoVersion": "5.1.0.0",
+  "pentahoRelease": "752",
   "author": "Verachan Man-in",
   "devDependencies": {
     "grunt": "~0.4.5",
