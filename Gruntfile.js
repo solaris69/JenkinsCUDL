@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    //buildIndex: grunt.file.readJSON('build.json'),
+    buildIndex: grunt.file.readJSON('build.json'),
     banner: '/* <%= pkg.title || pkg.name %> -v <%= pkg.version %>*/  \n ',
 
     distrib: {
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     ,easy_rpm: {
         options: {
             //   summary: 'Creating rpm packages!',
-          /*
+
             name: "<%=pkg.name %>"
             ,version: "<%= pkg.version %>.<%= buildIndex.build %>"
             ,release: "<%= meta.revision %>"
@@ -59,10 +59,10 @@ module.exports = function(grunt) {
            'logger -s link deployed version to release directory'
            ,'sudo ln -sf /compass/integration/app/<%=pkg.name %>-<%= pkg.version %>.<%= buildIndex.build %> /compass/integration/app/<%=pkg.name %>'
            ]
-            */
+
 
             // Below is for Kettle binary to rpm
-            name: "<%=pkg.pentahoName %>"
+/*            name: "<%=pkg.pentahoName %>"
             ,version: "<%=pkg.pentahoVersion %>"
             ,release: "<%=pkg.pentahoRelease %>"
             ,buildArch: "x86_64"
@@ -77,12 +77,12 @@ module.exports = function(grunt) {
             ,postInstallScript: [
                 'logger -s link deployed version to release directory'
                 ,'sudo ln -sf /compass/integration/app/<%=pkg.pentahoName %>-<%=pkg.pentahoVersion %>.<%=pkg.pentahoRelease %> /compass/integration/app/pentaho'
-            ]
+            ] */
         },
         release: {
             files: [
-//                { cwd: '<%= distrib.root%>/', src: "**", dest: "/compass/integration/app/<%=pkg.name %>-<%= pkg.version %>.<%= buildIndex.build %>"}
-                { cwd: 'Kettle/', src: "**", dest: "/compass/integration/app/<%=pkg.pentahoName %>-<%=pkg.pentahoVersion %>.<%=pkg.pentahoRelease %>"}
+                { cwd: '<%= distrib.root%>/', src: "**", dest: "/compass/integration/app/<%=pkg.name %>-<%= pkg.version %>.<%= buildIndex.build %>"}
+//                { cwd: 'Kettle/', src: "**", dest: "/compass/integration/app/<%=pkg.pentahoName %>-<%=pkg.pentahoVersion %>.<%=pkg.pentahoRelease %>"}
             ]
         }
     }
