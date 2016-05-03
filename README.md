@@ -1,1 +1,1 @@
-This project is to generate rpm for Pentaho binary to deploy via Puppet.
+Adapt project to check API for json to compare with the expected json by RestGression.
